@@ -1,18 +1,58 @@
-
 body {
   background-color: #f4f4f4;
   font-family: 'Poppins', sans-serif;
-  color: #212529;
   margin: 0;
   padding: 0;
 }
 
+/* Splash */
+.splash-screen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #1E2A78, #E30613);
+  z-index: 9999;
+  animation: fadeOut 2s ease 2.5s forwards;
+}
+.splash-logo {
+  width: 100px;
+  animation: zoomIn 1.5s ease;
+}
+.splash-quote {
+  font-size: 1.2rem;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+@keyframes zoomIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Login */
+.login-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.login-box {
+  width: 90%;
+  max-width: 400px;
+}
+
+/* Hero & search */
 .hero {
   background: linear-gradient(135deg, #1E2A78, #E30613);
   color: white;
   text-align: center;
 }
-
 .search-box {
   max-width: 750px;
   margin: -40px auto 40px auto;
@@ -22,6 +62,7 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* Buttons */
 .btn-main {
   background-color: #E30613;
   color: #fff;
@@ -32,13 +73,13 @@ body {
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(227, 6, 19, 0.3);
 }
-
 .btn-main:hover {
   background-color: #c10010;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(227, 6, 19, 0.4);
 }
 
+/* Inputs */
 .form-control,
 .form-select {
   padding: 12px;
@@ -46,13 +87,10 @@ body {
   border: 1px solid #ced4da;
   box-shadow: none;
 }
-
 .btn-outline-secondary {
   border-color: #ced4da;
   color: #495057;
-  transition: 0.2s ease;
 }
-
 .btn-outline-secondary:hover {
   background-color: #f8f9fa;
   color: #212529;
