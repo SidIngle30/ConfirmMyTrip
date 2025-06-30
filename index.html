@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,64 +6,85 @@
   <title>ConfirmMyTrip</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-light bg-white shadow-sm px-3 py-2 border-bottom">
-    <div class="container d-flex justify-content-between align-items-center">
-      <a class="navbar-brand d-flex align-items-center gap-2 fs-4" href="#">
-        <img src="https://i.ibb.co/XZvNBmjp/confirmmytrip-logo-jpg.jpg" alt="ConfirmMyTrip Logo" height="34" style="border-radius: 6px;" />
-        <span>
-          <span style="color: #E30613; font-weight: 600;">Confirm</span><span style="color: #1E2A78; font-weight: 600;">MyTrip</span>
-        </span>
-      </a>
-      <a href="#login" class="btn btn-outline-secondary">Login / Signup</a>
-    </div>
-  </nav>
+  <!-- Splash Screen -->
+  <div id="splash" class="splash-screen d-flex flex-column justify-content-center align-items-center text-center">
+    <img src="https://i.ibb.co/XZvNBmjp/confirmmytrip-logo-jpg.jpg" alt="Logo" class="splash-logo mb-3" />
+    <h2 class="text-white splash-quote">"Your trusted partner for flights and buses!"</h2>
+  </div>
 
-  <!-- Hero Section -->
-  <section class="hero text-center" data-aos="fade-up">
-    <div class="container py-5">
-      <h1 class="display-5 fw-bold text-white">Book <span style="color: white;">Flights</span> & <span style="color: white;">Buses</span> Hassle-Free</h1>
-      <p class="lead text-light">Your all-in-one travel partner</p>
-    </div>
-  </section>
+  <!-- Login Section -->
+  <div id="loginSection" class="login-screen d-none">
+    <div class="login-box text-center p-4 shadow rounded bg-white">
+      <img src="https://i.ibb.co/XZvNBmjp/confirmmytrip-logo-jpg.jpg" alt="Logo" class="mb-3" height="60" />
+      <h4 class="mb-3">Welcome to <span style="color: #E30613;">Confirm</span><span style="color: #1E2A78;">MyTrip</span></h4>
+      <button class="btn btn-main w-100 mb-3" id="continueBtn">Continue with Google</button>
 
-  <!-- Search Box -->
-  <section class="search-box" data-aos="fade-up" data-aos-delay="200">
-    <form id="searchForm">
-      <div class="row g-3">
-        <div class="col-md-6">
-          <input type="text" class="form-control" id="from" placeholder="From (e.g., Mumbai)" />
-        </div>
-        <div class="col-md-6">
-          <input type="text" class="form-control" id="to" placeholder="To (e.g., Delhi)" />
-        </div>
-        <div class="col-md-4">
-          <input type="date" class="form-control" id="date" />
-        </div>
-        <div class="col-md-4">
-          <select class="form-select" id="type">
-            <option value="bus">Bus</option>
-            <option value="flight">Flight</option>
-          </select>
-        </div>
-        <div class="col-md-4">
-          <button type="submit" class="btn btn-main w-100">Search Tickets</button>
-        </div>
+      <div class="mb-3 text-start">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
       </div>
-    </form>
-  </section>
+      <div class="mb-3 text-start">
+        <label for="otp" class="form-label">OTP</label>
+        <input type="password" id="otp" class="form-control" placeholder="Enter OTP" required />
+      </div>
+      <button class="btn btn-main w-100" id="emailLoginBtn">Login with Email</button>
+    </div>
+  </div>
 
-  <!-- Footer -->
-  <footer class="bg-light text-center text-muted py-4 mt-5 border-top">
-    <p class="mb-0">&copy; 2025 ConfirmMyTrip. All rights reserved.</p>
-  </footer>
+  <!-- Main App -->
+  <div id="mainApp" class="d-none">
+    <nav class="navbar navbar-light bg-white shadow-sm px-3 py-2 border-bottom">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand d-flex align-items-center gap-2 fs-4" href="#">
+          <img src="https://i.ibb.co/XZvNBmjp/confirmmytrip-logo-jpg.jpg" alt="Logo" height="34" style="border-radius: 6px;" />
+          <span>
+            <span style="color: #E30613; font-weight: 600;">Confirm</span><span style="color: #1E2A78; font-weight: 600;">MyTrip</span>
+          </span>
+        </a>
+        <a href="#" class="btn btn-outline-secondary" onclick="location.reload()">Logout</a>
+      </div>
+    </nav>
 
-  <script src="./script.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+    <section class="hero text-center">
+      <div class="container py-5">
+        <h1 class="display-5 fw-bold text-white">Book <span style="color: white;">Flights</span> & <span style="color: white;">Buses</span> Hassle-Free</h1>
+        <p class="lead text-light">Your all-in-one travel partner</p>
+      </div>
+    </section>
+
+    <section class="search-box">
+      <form id="searchForm">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="from" placeholder="From (e.g., Mumbai)" />
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="to" placeholder="To (e.g., Delhi)" />
+          </div>
+          <div class="col-md-4">
+            <input type="date" class="form-control" id="date" />
+          </div>
+          <div class="col-md-4">
+            <select class="form-select" id="type">
+              <option value="bus">Bus</option>
+              <option value="flight">Flight</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-main w-100">Search Tickets</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <footer class="bg-light text-center text-muted py-4 mt-5 border-top">
+      <p class="mb-0">&copy; 2025 ConfirmMyTrip. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
