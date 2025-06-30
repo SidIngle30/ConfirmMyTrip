@@ -1,4 +1,40 @@
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('splash').classList.add('d-none');
+    document.getElementById('loginSection').classList.remove('d-none');
+  }, 3000);
+});
 
+// Google login simulation
+document.getElementById('continueBtn').addEventListener('click', () => {
+  alert("✅ Google login successful (demo only)");
+  showMainApp();
+});
+
+// Email login
+document.getElementById('emailLoginBtn').addEventListener('click', () => {
+  const email = document.getElementById('email').value.trim();
+  const otp = document.getElementById('otp').value.trim();
+
+  if (!email || !otp) {
+    alert("⚠️ Please enter both Email and OTP.");
+    return;
+  }
+
+  // Save to localStorage
+  localStorage.setItem('userEmail', email);
+  localStorage.setItem('userOTP', otp);
+
+  alert("✅ Login successful!");
+  showMainApp();
+});
+
+function showMainApp() {
+  document.getElementById('loginSection').classList.add('d-none');
+  document.getElementById('mainApp').classList.remove('d-none');
+}
+
+// Ticket Search
 document.getElementById('searchForm').addEventListener('submit', function (e) {
   e.preventDefault();
 
