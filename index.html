@@ -62,7 +62,7 @@
             <input type="text" class="form-control" id="from" placeholder="From (e.g., Mumbai)" />
           </div>
           <div class="col-md-6">
-            <input type="text" class="form-control" id="to" placeholder="To (e.g., Delhi)" />
+            <input type="text" class="form-control" id="to" placeholder="To (e.g., Pune)" />
           </div>
           <div class="col-md-4">
             <input type="date" class="form-control" id="date" />
@@ -79,6 +79,40 @@
         </div>
       </form>
     </section>
+
+    <div class="container mt-4 d-none" id="resultsSection">
+      <h5 class="mb-3">Available Tickets</h5>
+      <div id="ticketResults"></div>
+    </div>
+
+    <div class="container mt-4 d-none" id="seatSection">
+      <h5 class="mb-3">Select Your Seat</h5>
+      <div class="mb-3" id="seatLayout">
+        <!-- Seats will be generated here -->
+      </div>
+      <div class="mb-3">
+        <label for="passengerName" class="form-label">Name</label>
+        <input type="text" class="form-control" id="passengerName">
+      </div>
+      <div class="mb-3">
+        <label for="passengerAge" class="form-label">Age</label>
+        <input type="number" class="form-control" id="passengerAge">
+      </div>
+      <div class="mb-3">
+        <label for="passengerEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="passengerEmail">
+      </div>
+      <button class="btn btn-main" id="proceedBtn">Continue</button>
+    </div>
+
+    <div class="container mt-4 d-none" id="summarySection">
+      <h5>Booking Summary</h5>
+      <p><strong>Name:</strong> <span id="summaryName"></span></p>
+      <p><strong>Age:</strong> <span id="summaryAge"></span></p>
+      <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
+      <p><strong>Seat No:</strong> <span id="summarySeat"></span></p>
+      <button class="btn btn-main" onclick="alert('🧾 Redirecting to Razorpay...')">Proceed to Pay ₹999</button>
+    </div>
 
     <footer class="bg-light text-center text-muted py-4 mt-5 border-top">
       <p class="mb-0">&copy; 2025 ConfirmMyTrip. All rights reserved.</p>
